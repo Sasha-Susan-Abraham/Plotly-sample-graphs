@@ -1,0 +1,52 @@
+----Bar Chart----
+plot01=plotly.express.bar(dataset,x='day', y='tip',template='plotly_dark')
+
+plot01.show()
+
+
+
+---Bar Chart: Average Tip by day---
+
+fig3= plotly.express.bar(
+    dataset, x='day', y='tip', color='day',
+    title='Average Tip by day',
+    labels={'tip':'Average Tip ($)', 'day':'Day of the week'},
+    template='plotly_dark',
+)
+fig3.show()
+
+
+
+---Scatter Chart: Total Bill vs Tip----
+
+fig4= plotly.express.scatter(
+    dataset, x='total_bill', y='tip', color='sex',
+    title='Total Bill vs Tip (colored by gender)',
+    labels={'total_bill':'Total Bill ($)', 'tip':'Tip ($)'},
+    template='plotly_dark',
+    size='size'
+)
+fig4.show()
+
+
+----Box plot: Distribution of Total Bill by day----
+
+fig5= plotly.express.box(
+    dataset, x='day', y='total_bill', color='time',
+    title='Total Tip by day(colored by time)',
+    labels={'total_bill':'Total Bill ($)', 'day':'Day of the week'},
+    template='plotly_dark',
+)
+fig5.show()
+
+
+----Histogram: Tip Distribution----
+
+fig6= plotly.express.histogram(
+    dataset, x='tip', color='sex',
+    title='Distribution of Tip (Colored by Gender)',
+    labels={'tip':'Tip ($)', 'sex':'Gender'},
+    template='plotly_dark',
+)
+fig6.show()
+
